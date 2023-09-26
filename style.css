@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Lobster&family=Poppins:wght@300;400;500;600&family=Ubuntu:wght@500&display=swap');
+:root{
+    --theme-color: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #282A3A;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.analog-clock{
+    height: 500px;
+    width: 500px;
+    background-color: #213555;
+    border-radius: 50%;
+    border: 10px solid var(--theme-color);
+    position: relative;
+}
+.analog-clock::after{
+    content: '';
+    position:absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--theme-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 10;
+}
+.analog-clock::before{
+    content:'Aaqil';
+    color: var(--theme-color);
+    font-size: 25px;
+    font-family: 'Lobster', cursive;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.number{
+    --rotate:0;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    color: var(--theme-color);
+    font-size: 25px;
+    transform: rotate(var(--rotate));
+}
+.number-1{--rotate:30deg;}
+.number-2{--rotate:60deg;}
+.number-3{--rotate:90deg;}
+.number-4{--rotate:120deg;}
+.number-5{--rotate:150deg;}
+.number-6{--rotate:180deg;}
+.number-7{--rotate:210deg;}
+.number-8{--rotate:240deg;}
+.number-9{--rotate:270deg;}
+.number-10{--rotate:300deg;}
+.number-11{--rotate:330deg;}
+.needle{
+    --needle:0;
+    position: absolute;
+    width: 10px;
+    height: 40%;
+    bottom: 50%;
+    right: 49%;
+    background-color: #fff;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    transform: rotate(calc(var(--needle)*1deg));
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    z-index: 8;
+}
+
+.sec{
+    background-color: #fff;
+    width: 3px;
+    height: 40%;
+    position: absolute;
+    right: 49.6%;
+}
+.min{
+    background-color: black;
+    width: 7px;
+    height: 35%;
+    
+}
+.hrs{
+    background-color: black;
+    width: 10px;
+    height: 25%;
+    
+}
